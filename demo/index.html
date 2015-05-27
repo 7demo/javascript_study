@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+    function makeCounter () {
+        var i = 0;
+        return function () {
+            console.log(i++);
+        }
+    }
+
+    // var counter1 = makeCounter();
+    // counter1(); //log : 1;
+    // counter1(); //log:2
+
+    // var counter2 = makeCounter();
+    // counter2(); //log:1
+    // counter2(); //log:2
+
+    var aa = function () {
+        this.i = 0;
+        this.k = 0;
+        this.count = function () {
+            console.log(this.k++)
+        }
+    }
+    aa.prototype = {
+        log : function () {
+            console.log(this.i++)
+        }
+    }
+    var a1 = new aa();
+    a1.count() // log 0
+    a1.count() //log 1
+    a1.log(); // log 0
+    a1.log();// log 1
+    var a2 = new aa1;
+    a2.count() // log 0
+    a2.count()// log 1
+    a2.log(); // log 0
+    a2.log();// log 1
+</script>
+</body>
+</html>
